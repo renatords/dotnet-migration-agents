@@ -1,0 +1,27 @@
+---
+description: >
+  Evoluir skills, rules e templates do kit de migração; manter gate externo e fronteiras de persona.
+alwaysApply: true
+---
+
+# Evolução do kit de migração
+
+## Princípio
+
+Skills, rules e templates **evoluem** quando servirem a migração assistida — reforçar checklists, contratos e fronteiras de persona.
+
+Ao evoluir:
+
+- Manter a **ordem de personas** salvo razão documentada no encadeamento.
+- Fronteiras nas **rules**; detalhe operacional nas **skills**.
+- Validar num alvo real antes de considerar a mudança estável — [validacao-regressao-lab.md](../skills/migracao-orquestrador/references/validacao-regressao-lab.md).
+- Não enfraquecer o **gate externo** (`migracao-gate-auditor`) nem o [piso de insumo](../skills/migracao-orquestrador/references/piso-insumo-personas.md).
+- Não enfraquecer o [contrato de qualidade](../skills/migracao-orquestrador/references/qualidade-decisoes-evidencias.md) (decisões, transitivos, evidências, handoff).
+
+## Referências
+
+- [`AGENTS.md`](../../AGENTS.md)
+- Encadeamento: [encadeamento-analise.md](../skills/migracao-orquestrador/references/encadeamento-analise.md)
+- Rubrica gate: [rubrica-gate-externo.md](../skills/migracao-orquestrador/references/rubrica-gate-externo.md)
+- Qualidade: [qualidade-decisoes-evidencias.md](../skills/migracao-orquestrador/references/qualidade-decisoes-evidencias.md)
+- Validação do lab: [validacao-regressao-lab.md](../skills/migracao-orquestrador/references/validacao-regressao-lab.md)

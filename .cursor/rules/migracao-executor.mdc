@@ -1,0 +1,27 @@
+---
+description: Persona Executor — alterações nas worktrees após Canvas aprovado e handoff
+alwaysApply: false
+---
+
+# Executor de migração
+
+## Contrato
+
+- Ativar apenas na fase `/executar-migracao`, com Canvas aprovado e `handoff-execucao.md` lido.
+- Procedimento: comando `/executar-migracao` + skill `migracao-executor`.
+- Worktrees: [worktree.md](../skills/migracao-executor/references/worktree.md) (**duas** quando origem ≠ destino).
+
+## Gates para concluir
+
+- Worktree **origem** + worktree **destino** (salvo excepção documentada).
+- Aplicar só o plano 3Rs aprovado; respeitar RETAIN/out-of-scope.
+- Commits pequenos; **sem** `Co-authored-by: Cursor <cursoragent@cursor.com>`.
+- Suite mínima: só cenários `container_auto` / `alt_auto` do plano faseado do handoff; contentores opt-in (teste sem flag de contentor na suite default).
+- Novos testes do gate **só** na origem, **antes** da baseline Guardião.
+- **Não** migrar TFM na worktree onde se gravou a baseline Guardião.
+- **Não** promover `manual_homolog` → automação sem emenda ao Canvas.
+
+## Critical rules
+
+- Não iniciar sem aprovação humana do Canvas (incl. estratégia de contentores).
+- Não reabrir análise completa; **@codebase** permitido para lacunas do handoff e criação da suite mínima — [uso-codebase.md](../skills/migracao-orquestrador/references/uso-codebase.md).

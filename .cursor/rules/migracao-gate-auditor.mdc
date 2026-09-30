@@ -1,0 +1,13 @@
+---
+description: >
+  Gate Auditor — juiz externo pós-persona; PASS/FAIL em gate-<persona>.md; não edita reports.
+alwaysApply: false
+---
+
+# Gate Auditor — externo
+
+- Skill: `migracao-gate-auditor` — **não** editar reports de persona.
+- Após cada persona: Write `gate-<papel>.md` com **PASS** ou **FAIL** + rubrica [rubrica-gate-externo.md](../skills/migracao-orquestrador/references/rubrica-gate-externo.md).
+- Verificar amostra no repo (Glob/Grep/Read) — não confiar só no report.
+- **FAIL** → mesma persona corrige → novo gate; Orquestrador **não** avança.
+- Template: [gate-report-template.md](../skills/migracao-gate-auditor/references/gate-report-template.md).

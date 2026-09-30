@@ -1,0 +1,32 @@
+---
+description: Migração .NET — regras globais (reports, handoff, evidência, gate externo)
+alwaysApply: true
+---
+
+# Migração assistida — globais
+
+- **Uma sessão:** personas são **papéis sequenciais** na mesma UI; não presumir paralelismo ou API entre agentes.
+
+- **Fonte da verdade:** `.migration-context/` no repo **alvo** — `reports/<papel>.md`, `reports/orquestrador-complementos.md` (síntese), `canvas-migration.md`, `handoff-execucao.md`, `reports/gate-*.md`.
+
+- **Comandos principais:** **`/analisar-migracao`** (análise + Canvas + handoff) e **`/executar-migracao`** (execução com insumos fechados).
+
+- **Ordem e gates da análise:** skill Orquestrador → [encadeamento-analise.md](../skills/migracao-orquestrador/references/encadeamento-analise.md).
+
+- **Contrato operacional:** apenas `.cursor/rules/`, `.cursor/skills/`, `.cursor/commands/` — não usar material fora deste contrato durante análise ou execução.
+
+- **Evidência:** pacotes, topologia, integrações e métricas de teste vêm de **`Glob` / `Grep` / `Read`** no repo alvo e **`Shell` `dotnet`** quando aplicável. **Proibido** inventar versões de pacotes, CVE, grafo ou estrutura de solução sem evidência rastreável.
+
+- **Reports:** cada persona faz **Write integral** de `reports/<papel>.md`.
+
+- **Gate externo:** após cada persona → skill **`migracao-gate-auditor`** → `gate-<papel>.md` **PASS** antes de avançar (persona **não** auto-valida).
+
+- **Pedidos misturados:** Orquestrador decompõe em passos e nomeia personas e ordem.
+
+- **Skill/referência ausente:** declarar a lacuna; **não** substituir por suposição.
+
+- **Segredos:** nunca copiar connection strings ou chaves em claro para o chat; usar identificadores higienizados nos reports.
+
+- **Execução:** só após **aprovação humana** do Canvas (incl. estratégia de contentores); `/executar-migracao` lê handoff + canvas — **não** repetir análise completa salvo lacunas na seção Lacunas do handoff.
+
+- **@codebase:** permitido para evidência **pontual** (Incertezas, lacuna no handoff, fato isolado para parecer/3R/implementação) — **não** re-varrer o repo inteiro; registrar no report, `orquestrador-complementos.md` ou `execucao.md`. Detalhe: [uso-codebase.md](../skills/migracao-orquestrador/references/uso-codebase.md).

@@ -1,0 +1,10 @@
+---
+description: Não incluir Co-authored-by Cursor nas mensagens de commit
+alwaysApply: true
+---
+
+# Commits sem atribuição Cursor
+
+- **Nunca** incluir `Co-authored-by: Cursor <cursoragent@cursor.com>` (nem qualquer trailer `Co-authored-by` do agente) na mensagem de `git commit`.
+- Aplica-se a worktrees do alvo (`migration/baseline-*`, `migration/sandbox-*`) e a este repositório.
+- Se o ambiente injetar o trailer, remover no commit local recém-criado (`--amend`) — não force-push só por isso.

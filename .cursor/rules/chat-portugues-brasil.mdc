@@ -1,0 +1,10 @@
+---
+description: Idioma do assistente no chat — português do Brasil (qualquer assunto)
+alwaysApply: true
+---
+
+# Idioma do chat (assistente)
+
+- Responder **sempre em português do Brasil (pt-BR)** em todas as mensagens deste chat neste workspace — explicações, perguntas, erros, resumos e instruções.
+- Manter em inglês apenas o que for **nome próprio de tecnologia** (APIs, comandos, paths, identificadores de código, mensagens literais de compilador) quando não fizer sentido traduzir.
+- Esta regra é sobre **idioma da conversa**, independentemente de estar ou não no fluxo de migração.
